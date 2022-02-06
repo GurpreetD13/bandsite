@@ -1,0 +1,127 @@
+@use "./typography" as *; 
+@use "./colors" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+
+html {
+    font-size: $root-font-size;
+    font-family: $font-stack;
+}
+
+body {
+    margin: 0;
+    color: $color-primary-black;
+    // box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: $color-primary-black;
+    display: flex;
+    flex-direction: column;  //change when change to tbalet
+    // align-items: center;
+    // justify-content: center;
+    text-align: center;
+
+    &__logo {
+        color: $color-primary-white;
+        @include font-header-section;
+        font-weight: normal;
+        margin-top: 1rem;
+    }
+}
+
+.nav {
+    @include font-subheader;
+    font-weight: normal;
+
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0.5rem;
+  
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        color: $color-secondary-mercury;
+
+        &:hover, &--active {
+            color: $color-primary-white;
+            font-weight: bold;
+
+            border-bottom: 2px solid $color-primary-white;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+.footer {
+    background-color: $color-primary-black;
+    color: $color-primary-white;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem 2.5% 1rem;
+
+
+    &__title {
+        @include font-header-section;
+        margin: 0 0 1rem;
+    }
+
+    &__icons {
+        // display: flex;
+    }
+
+    &__contacts {
+        
+    }
+
+    &__logo {
+        color: $color-primary-white;
+        @include font-header-section;
+        font-weight: normal;
+        padding-top: 2rem;
+    }
+
+    &__copyright {
+        @include font-footer;
+    }
+}
+
+.icon {
+    // width: 20px;
+    margin: 0 30px 20px 0;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0rem;
+    padding-bottom: 1.5rem;
+
+    &__title {
+        @include font-footer;
+        font-weight: bold;
+        margin: 0.25rem 0;
+    }
+
+    &__info {
+        @include font-footer;
+        margin: 0.25rem 0;
+    }
+
+    &__spacer {
+        padding-bottom: 1.25rem;
+    }
+}
