@@ -11,7 +11,6 @@ html {
 body {
     margin: 0;
     color: $color-primary-black;
-    // box-sizing: border-box;
 }
 
 a {
@@ -21,23 +20,32 @@ a {
 .header {
     background-color: $color-primary-black;
     display: flex;
-    flex-direction: column;  //change when change to tbalet
-    // align-items: center;
-    // justify-content: center;
+    flex-direction: column;
     text-align: center;
+
+    @include tablet {
+        flex-direction: row;
+    }
 
     &__logo {
         color: $color-primary-white;
         @include font-header-section;
         font-weight: normal;
         margin-top: 1rem;
+
+        @include tablet {
+            padding: 0 5%;
+        }
+
+        @include desktop {
+            padding: 0 5% 0 10%;
+        }
     }
 }
 
 .nav {
     @include font-subheader;
     font-weight: normal;
-
 
     &__list {
         list-style-type: none;
@@ -46,21 +54,29 @@ a {
   
         display: flex;
         justify-content: space-around;
+
+        @include tablet {
+            justify-content: flex-start;
+        }
     }
 
     &__item {
+        @include tablet {
+            margin-right: 10%; //not working
+        }
 
     }
 
     &__link {
         color: $color-secondary-mercury;
-
         &:hover, &--active {
             color: $color-primary-white;
-            font-weight: bold;
-
             border-bottom: 2px solid $color-primary-white;
             padding-bottom: 1rem;
+        }
+
+        &--active {
+            font-weight: bold;
         }
     }
 }
@@ -70,20 +86,39 @@ a {
     color: $color-primary-white;
     box-sizing: border-box;
     width: 100%;
-    padding: 1.5rem 2.5% 1rem;
+    padding: 1.5rem 5% 1rem;
 
+    @include desktop {
+        padding: 3rem 10% 2rem;
 
+    }
+
+    &__top-container {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
     &__title {
         @include font-header-section;
         margin: 0 0 1rem;
+        padding-right: 3.1%;
     }
 
     &__icons {
-        // display: flex;
+        display: flex;
+        align-items: flex-end;
     }
 
     &__contacts {
-        
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
     }
 
     &__logo {
@@ -91,6 +126,8 @@ a {
         @include font-header-section;
         font-weight: normal;
         padding-top: 2rem;
+        max-height: 20px;
+        max-width: 120px;
     }
 
     &__copyright {
@@ -99,7 +136,6 @@ a {
 }
 
 .icon {
-    // width: 20px;
     margin: 0 30px 20px 0;
 }
 
@@ -109,6 +145,7 @@ a {
     justify-content: space-between;
     margin: 0rem;
     padding-bottom: 1.5rem;
+    padding-right: 4.8%;
 
     &__title {
         @include font-footer;
@@ -117,6 +154,7 @@ a {
     }
 
     &__info {
+        color: $color-primary-white;
         @include font-footer;
         margin: 0.25rem 0;
     }
