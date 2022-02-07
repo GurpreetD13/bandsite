@@ -45,6 +45,10 @@
     width: 100%;
     padding: 1.5rem 5% 1rem;
 
+    @include tablet {
+        padding: 3rem 5% 1rem;
+    }
+
     @include desktop {
         padding: 3rem 10% 2rem;
     }
@@ -52,6 +56,10 @@
     &__title {
         @include font-header-section;
         margin: 0 0 1rem;
+
+        @include tablet {
+            margin-bottom: 3rem;
+        }
     }
 
     &__container {

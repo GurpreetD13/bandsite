@@ -45,6 +45,8 @@ a {
 
 .nav {
     @include font-subheader;
+    font-size: 0.875rem;
+    line-height: 1.375rem; 
     font-weight: normal;
 
     &__list {
@@ -57,14 +59,14 @@ a {
 
         @include tablet {
             justify-content: flex-start;
+            margin-top: 1.25rem;
         }
     }
 
     &__item {
         @include tablet {
-            margin-right: 10%; //not working
+            margin-right: 10%;
         }
-
     }
 
     &__link {
@@ -73,6 +75,11 @@ a {
             color: $color-primary-white;
             border-bottom: 2px solid $color-primary-white;
             padding-bottom: 1rem;
+
+            @include tablet {
+                padding-bottom: 1.5rem;
+                border-bottom: 3px solid $color-primary-white;
+            }
         }
 
         &--active {
@@ -104,7 +111,7 @@ a {
     &__title {
         @include font-header-section;
         margin: 0 0 1rem;
-        padding-right: 3.1%;
+        padding-right: 3.3%;
     }
 
     &__icons {
@@ -128,6 +135,16 @@ a {
         padding-top: 2rem;
         max-height: 20px;
         max-width: 120px;
+
+        @include tablet {
+            position: relative;
+            left: 76%;
+            bottom: 16rem;
+        }
+
+        @include desktop {
+            left: 83%;
+        }
     }
 
     &__copyright {
@@ -149,7 +166,7 @@ a {
 
     &__title {
         @include font-footer;
-        font-weight: bold;
+        font-weight: 600;
         margin: 0.25rem 0;
     }
 
