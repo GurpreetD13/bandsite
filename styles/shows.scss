@@ -8,7 +8,9 @@
 
 .hero {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
     position: relative;
 
     background-image: url(../assets/images/hero-shows.jpg);
@@ -38,4 +40,109 @@
             margin-left: 10%;
         }
     }
+
+    &__subtitle {
+        color: $color-primary-white;
+        @include font-subheader;
+        z-index: 1;
+        margin-left: 5%;
+
+        @include desktop {
+            margin-left: 10%;
+        }
+    }
+
+    &__song {
+        z-index: 1;
+        margin-left: 5%;
+        width: 90%;
+        max-width: 400px;
+        // max-height: 150px;
+
+        @include desktop {
+            margin-left: 10%;
+        }
+    }
 }
+
+// .main {
+//     box-sizing: border-box;
+//     width: 100%;
+//     padding: 1.5rem 5% 1rem;
+
+//     @include tablet {
+//         padding: 3rem 5% 1rem;
+//     }
+
+//     @include desktop {
+//         padding: 3rem 10% 2rem;
+//     }
+
+//     &__title {
+//         @include font-header-section;
+//         margin: 0 0 1rem;
+
+//         @include tablet {
+//             margin-bottom: 3rem;
+//         }
+//     }
+// }
+
+.show {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px; //as per style guide
+    border-bottom: 1px solid $color-secondary-mercury;
+    
+    @include font-body;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 18px; //as per style guide
+
+        &:hover {
+            background-color: $color-secondary-alabaster;
+        }
+
+        &:active {
+            background-color: $color-secondary-mercury;
+        }
+    }
+
+    &__info {
+
+        &--date {
+            font-weight: bold;
+        }
+    }
+
+    &__info-heading {
+        color: $color-primary-silver;
+
+        @include tablet {
+            display:none;
+        }
+
+        &--large {
+            display: none;
+
+            @include tablet {
+                display: flex;
+                // justify-content: space-between;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -26,6 +26,33 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  background-color: #323232;
+  color: #FFFFFF;
+  border-radius: 4px;
+  border: none;
+  height: 40px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  button {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: 150px;
+    padding: 0 32px;
+  }
+}
+button:hover {
+  background-color: #000000;
+}
+
 .header {
   background-color: #323232;
   display: flex;
@@ -243,7 +270,8 @@ a {
 
 .hero {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   background-image: url(../assets/images/hero-shows.jpg);
   background-size: cover;
@@ -279,5 +307,84 @@ a {
 @media screen and (min-width: 1280px) {
   .hero__title {
     margin-left: 10%;
+  }
+}
+.hero__subtitle {
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  z-index: 1;
+  margin-left: 5%;
+}
+@media screen and (min-width: 768px) {
+  .hero__subtitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__subtitle {
+    margin-left: 10%;
+  }
+}
+.hero__song {
+  z-index: 1;
+  margin-left: 5%;
+  width: 90%;
+  max-width: 400px;
+}
+@media screen and (min-width: 1280px) {
+  .hero__song {
+    margin-left: 10%;
+  }
+}
+
+.show {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  border-bottom: 1px solid #E1E1E1;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .show {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 18px;
+  }
+  .show:hover {
+    background-color: #FAFAFA;
+  }
+  .show:active {
+    background-color: #E1E1E1;
+  }
+}
+.show__info--date {
+  font-weight: bold;
+}
+.show__info-heading {
+  color: #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  .show__info-heading {
+    display: none;
+  }
+}
+.show__info-heading--large {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .show__info-heading--large {
+    display: flex;
   }
 }/*# sourceMappingURL=shows.css.map */
