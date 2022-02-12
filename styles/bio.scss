@@ -135,12 +135,11 @@
             width: 32%;
         }
 
-        @include desktop {
-            filter:grayscale(100%);
+        filter:grayscale(100%);
 
-            &:hover {
-                filter: none;
-            }
+        &:hover {
+            filter: none;
         }
+
     }
 }
