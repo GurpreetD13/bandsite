@@ -1,4 +1,3 @@
-
 commentsData = [
     {
         name: "Connor Walton",

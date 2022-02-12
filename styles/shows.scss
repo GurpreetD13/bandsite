@@ -7,16 +7,22 @@
 
 
 .hero {
+
+    // box-sizing: border-box;
     display: flex;
     flex-direction: column;
     // align-items: center;
-    justify-content: center;
+    justify-content: space-evenly; // could center
     position: relative;
 
     background-image: url(../assets/images/hero-shows.jpg);
     background-size: cover;
     background-position: center;
-    height: 31vh;
+    height: 42vh;
+
+    @include tablet {
+        height: 36vh;
+    }
 
     @include desktop {
         height: 90vh;
@@ -34,10 +40,15 @@
         color: $color-primary-white;
         @include font-header-page;
         z-index: 1;
-        margin-left: 5%;
+        margin: 0 0 0 5%; // was just left 5%
+
+        @include tablet {
+            width: 70%;
+        }
 
         @include desktop {
             margin-left: 10%;
+            width: 40%;
         }
     }
 
@@ -46,6 +57,8 @@
         @include font-subheader;
         z-index: 1;
         margin-left: 5%;
+        margin: 0 0 0 5%; // was just left 5%
+
 
         @include desktop {
             margin-left: 10%;
@@ -54,13 +67,19 @@
 
     &__song {
         z-index: 1;
-        margin-left: 5%;
+        margin: 0 0 0 5%; // fix this to both sides
         width: 90%;
         max-width: 400px;
+
+        height: 110px ;// adjust this
         // max-height: 150px;
 
         @include desktop {
             margin-left: 10%;
+                position: relative;
+                left: 50%;
+                bottom: 16rem;
+
         }
     }
 }
@@ -101,6 +120,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 24px 18px; //as per style guide
+        min-width: none; // don't use padding just try a fixed width in remS!
 
         &:hover {
             background-color: $color-secondary-alabaster;
