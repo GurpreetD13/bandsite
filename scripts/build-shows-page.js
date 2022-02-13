@@ -29,7 +29,7 @@ concertsData = [
         venue: "Press Club",
         location: "San Francisco, CA"
     }
-]
+];
 
 const mainSection = document.querySelector(".main__container");
 
@@ -37,6 +37,7 @@ function createShows(date, venue, location) {
 
     let articleEl = document.createElement("article");
     articleEl.classList.add("show");
+    mainSection.appendChild(articleEl) //could move to top??
 
     let pEl1 = document.createElement("p");
     pEl1.classList.add("show__info-heading")

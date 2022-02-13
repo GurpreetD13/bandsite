@@ -220,12 +220,14 @@ label {
 }
 
 input, textarea {
-    // @include font-body;
-    // color: $color-primary-black;
+    @include font-body;
+    font-family: $font-stack;
+    color: $color-primary-black;
     width: 89%;
     margin:4px 0 20px;
     border-radius: 4px;
     border: 1px solid $color-secondary-mercury;
+    background-color: $color-secondary-alabaster;
     min-height: 36px;
     padding: 12px;
 
@@ -245,6 +247,11 @@ input, textarea {
 
 textarea {
     resize: none;
+    min-height: 72px;
+
+    @include tablet {
+        min-height: 96px;
+    }
 }
 
 .comment-post {
