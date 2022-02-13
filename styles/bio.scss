@@ -143,3 +143,158 @@
 
     }
 }
+
+.comments-section {
+    @include font-body;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem 5% 1rem;
+
+    @include desktop {
+        padding: 3rem 10% 2rem;
+    }
+
+    &__title {
+        @include font-header-section;
+        margin: 0 0 0.5rem;
+    }
+
+    &__form-container {
+        
+    }
+
+    &__avatar {
+        
+    }
+
+    &__posts { //may not need
+
+    }
+}
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid $color-secondary-mercury;
+    padding: 1.5rem 5% 1rem;
+
+    @include desktop {
+        padding: 3rem 10% 2rem;
+    }
+
+    &__avatar {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        margin-right: 17px;
+        width: 36px;
+        height: 36px;
+
+        @include tablet {
+            width: 48px;
+            height: 48px; 
+        }
+    }
+
+    &__form {
+        // box-sizing: border-box;
+        width: 80%;
+    }
+}
+
+
+form { //or use id or comoment-form
+
+}
+
+.form {
+
+}
+
+label {
+    color: $color-primary-silver;
+}
+
+input, textarea {
+    // @include font-body;
+    // color: $color-primary-black;
+    width: 89%;
+    margin:4px 0 20px;
+    border-radius: 4px;
+    border: 1px solid $color-secondary-mercury;
+    min-height: 36px;
+    padding: 12px;
+
+    @include tablet {
+        min-height: 48px;
+        padding: 16px;
+    }
+
+    &:active {
+        border-color: $color-primary-black;
+    }
+
+    &--error {
+        border-color: #D22D2D;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+.comment-post {
+    @include font-body;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid $color-secondary-mercury;
+    padding: 1.5rem 5% 1rem;
+
+    @include desktop {
+        padding: 3rem 10% 2rem;
+    }
+
+    &__avatar {
+        background-color: $color-secondary-mercury;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        margin-right: 17px;
+        width: 36px;
+        height: 36px;
+
+        @include tablet {
+            width: 48px;
+            height: 48px; 
+        }
+    }
+
+    &__container {
+        // box-sizing: border-box;
+        width: 80%;
+    }
+
+    &__heading-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__name {
+        font-weight: bold;
+    }
+
+    &__date {
+        color: $color-primary-silver;
+    }
+
+    &__comment {
+        
+    }
+}

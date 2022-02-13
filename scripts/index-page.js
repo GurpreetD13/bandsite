@@ -15,3 +15,28 @@ commentsData = [
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
 ]
+
+// const
+
+function displayComment(comment) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+commentsData.forEach(comment => {
+    displayComment(comment)
+});
+
+
+
+
+// add event listener here or above??
