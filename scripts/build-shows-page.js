@@ -73,7 +73,7 @@ function createShows(date, venue, location) {
     buttonEl.innerText = "BUY TICKETS";
     articleEl.appendChild(buttonEl);
 
-    mainSection.appendChild(articleEl)
+    mainSection.appendChild(articleEl) //could move to top??
 }
 
 concertsData.forEach(concert => {

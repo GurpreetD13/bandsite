@@ -8,7 +8,7 @@ commentsData = [
         name: "Emilie Beach",
         timestamp: "01/09/2021",
         comment: "I feel blessed to have seen them in person.What a show! They were just perfection.If there was one day of my life I could relive, this would be it.What an incredible day."
-    }, 
+    },
     {
         name: "Miles Acosta",
         timestamp: "12/20/2020",
@@ -18,8 +18,40 @@ commentsData = [
 
 // const
 
-function displayComment(comment) {
+let commentsSection = document.querySelector(".comments-section");
 
+function displayComment(post) {
+    
+    let newComment = document.createElement("div");
+    newComment.classList.add("comment-post");
+    commentsSection.appendChild(newComment);
+    
+    let avatar = document.createElement("div");
+    avatar.classList.add("comment-post__avatar");
+    newComment.appendChild(avatar);
+    
+    let commentContainer = document.createElement("div");
+    commentContainer.classList.add("comment-post__container");
+    newComment.appendChild(commentContainer);
+    
+    let commentHeading = document.createElement("div");
+    commentHeading.classList.add("comment-post__heading-container");
+    commentContainer.appendChild(commentHeading);
+    
+    let commentName = document.createElement("p");
+    commentName.classList.add("comment-post__name");
+    commentName.innerText = post.name;
+    commentHeading.appendChild(commentName);
+    
+    let commentDate = document.createElement("p");
+    commentDate.classList.add("comment-post__date");
+    commentDate.innerText = post.timestamp;
+    commentHeading.appendChild(commentDate);
+    
+    let commentText = document.createElement("p");
+    commentText.classList.add("comment-post__heading-comment");
+    commentText.innerText = post.comment;
+    commentContainer.appendChild(commentText);
 }
 
 
@@ -27,13 +59,11 @@ function displayComment(comment) {
 
 
 
+// bottomOfForm.appendChild(newComment);
 
 
-
-
-
-commentsData.forEach(comment => {
-    displayComment(comment)
+commentsData.forEach(post => {
+    displayComment(post)
 });
 
 
