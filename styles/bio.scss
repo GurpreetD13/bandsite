@@ -158,18 +158,6 @@
         @include font-header-section;
         margin: 0 0 0.5rem;
     }
-
-    &__form-container {
-        
-    }
-
-    &__avatar {
-        
-    }
-
-    &__posts { //may not need
-
-    }
 }
 
 
@@ -179,7 +167,7 @@
     box-sizing: border-box;
     width: 100%;
     border-bottom: 1px solid $color-secondary-mercury;
-    padding: 1.5rem 5% 1rem;
+    padding: 1.5rem 0 1rem;
 
     @include desktop {
         padding: 3rem 10% 2rem;
@@ -201,18 +189,18 @@
     }
 
     &__form {
-        // box-sizing: border-box;
         width: 80%;
     }
-}
+    &__button {
+        @include tablet {
+            margin-left: 65%;
+        }
 
+        @include desktop {
+            margin-left: 69%;
 
-form { //or use id or comoment-form
-
-}
-
-.form {
-
+        }
+    }
 }
 
 label {
@@ -223,7 +211,7 @@ input, textarea {
     @include font-body;
     font-family: $font-stack;
     color: $color-primary-black;
-    width: 89%;
+    width: 90%;
     margin:4px 0 20px;
     border-radius: 4px;
     border: 1px solid $color-secondary-mercury;
@@ -261,7 +249,7 @@ textarea {
     box-sizing: border-box;
     width: 100%;
     border-bottom: 1px solid $color-secondary-mercury;
-    padding: 1.5rem 5% 1rem;
+    padding: 1.5rem 0 1rem;
 
     @include desktop {
         padding: 3rem 10% 2rem;
@@ -283,7 +271,6 @@ textarea {
     }
 
     &__container {
-        // box-sizing: border-box;
         width: 80%;
     }
 
@@ -298,9 +285,5 @@ textarea {
 
     &__date {
         color: $color-primary-silver;
-    }
-
-    &__comment {
-        
     }
 }

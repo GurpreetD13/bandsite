@@ -18,7 +18,9 @@ a {
 }
 
 button {
+    font-style: $font-stack;
     @include font-labels-buttons;
+    font-size: 0.875rem;
     background-color: $color-primary-black;
     color: $color-primary-white;
     border-radius: 4px;
@@ -27,7 +29,8 @@ button {
     width: 100%;
 
     @include tablet {
-        width: 150px;
+        font-size: 0.9375rem;
+        width: 175px;
         padding: 0 32px;
     }
 
@@ -116,7 +119,6 @@ button {
 
     @include desktop {
         padding: 3rem 10% 2rem;
-
     }
 
     &__top-container {

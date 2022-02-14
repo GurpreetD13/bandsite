@@ -27,9 +27,11 @@ a {
 }
 
 button {
+  font-style: "AvenirNext", sans-serif;
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: bold;
+  font-size: 0.875rem;
   background-color: #323232;
   color: #FFFFFF;
   border-radius: 4px;
@@ -45,7 +47,8 @@ button {
 }
 @media screen and (min-width: 768px) {
   button {
-    width: 150px;
+    font-size: 0.9375rem;
+    width: 175px;
     padding: 0 32px;
   }
 }
@@ -335,9 +338,16 @@ button:hover {
     line-height: 2rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .hero__subtitle {
+    position: relative;
+    top: 2.5vh;
+  }
+}
 @media screen and (min-width: 1280px) {
   .hero__subtitle {
     margin-left: 10%;
+    top: 8vh;
   }
 }
 .hero__song {
@@ -353,14 +363,49 @@ button:hover {
     position: relative;
     left: 50%;
     bottom: 16rem;
+    height: 140px;
+  }
+}
+
+.main {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5rem 16px 1rem;
+}
+@media screen and (min-width: 768px) {
+  .main {
+    padding: 3rem 5% 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main {
+    padding: 3rem 10% 2rem;
+    position: relative;
+  }
+}
+.main__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .main__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__container {
+    position: relative;
   }
 }
 
 .show {
   box-sizing: border-box;
   width: 100%;
-  padding: 16px;
   border-bottom: 1px solid #E1E1E1;
+  padding: 16px 0 16px;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
@@ -377,13 +422,27 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     padding: 24px 18px;
-    min-width: none;
+    font-size: 1rem;
   }
-  .show:hover {
-    background-color: #FAFAFA;
+}
+@media screen and (min-width: 1280px) {
+  .show {
+    width: 75%;
+    margin-left: 20%;
   }
-  .show:active {
-    background-color: #E1E1E1;
+}
+.show:hover {
+  background-color: #FAFAFA;
+}
+.show--active {
+  background-color: #E1E1E1;
+}
+.show--active:hover {
+  background-color: #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .show__info {
+    width: 25%;
   }
 }
 .show__info--date {
@@ -397,11 +456,36 @@ button:hover {
     display: none;
   }
 }
-.show__info-heading--large {
+
+.show-title-hidden {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .show__info-heading--large {
+  .show-title-hidden {
+    color: #AFAFAF;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid #E1E1E1;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
     display: flex;
+    padding: 24px 18px;
+    font-size: 1rem;
   }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .show-title-hidden {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .show-title-hidden {
+    width: 75%;
+    margin-left: 20%;
+  }
+}
+.show-title-hidden__label {
+  width: 26.5%;
 }/*# sourceMappingURL=shows.css.map */

@@ -35,48 +35,65 @@ const mainSection = document.querySelector(".main__container");
 
 function createShows(date, venue, location) {
 
-    let articleEl = document.createElement("article");
-    articleEl.classList.add("show");
-    mainSection.appendChild(articleEl) //could move to top??
+    const showContainer = document.createElement("article");
+    showContainer.classList.add("show");
+    mainSection.appendChild(showContainer);
 
-    let pEl1 = document.createElement("p");
-    pEl1.classList.add("show__info-heading")
-    pEl1.innerText = "DATE";
-    articleEl.appendChild(pEl1);
+    const dateLabel = document.createElement("p");
+    dateLabel.classList.add("show__info-heading");
+    dateLabel.innerText = "DATE";
+    showContainer.appendChild(dateLabel);
 
-    let pEl2 = document.createElement("p");
-    pEl2.classList.add("show__info", "show__info--date")
-    pEl2.innerText = date;
-    articleEl.appendChild(pEl2);
+    const dateText = document.createElement("p");
+    dateText.classList.add("show__info", "show__info--date");
+    dateText.innerText = date;
+    showContainer.appendChild(dateText);
 
-    let pEl3 = document.createElement("p");
-    pEl3.classList.add("show__info-heading")
-    pEl3.innerText = "VENUE";
-    articleEl.appendChild(pEl3);
+    const venueLabel = document.createElement("p");
+    venueLabel.classList.add("show__info-heading");
+    venueLabel.innerText = "VENUE";
+    showContainer.appendChild(venueLabel);
 
-    let pEl4 = document.createElement("p");
-    pEl4.classList.add("show__info")
-    pEl4.innerText = venue;
-    articleEl.appendChild(pEl4);
+    const venueText = document.createElement("p");
+    venueText.classList.add("show__info");
+    venueText.innerText = venue;
+    showContainer.appendChild(venueText);
 
-    let pEl5 = document.createElement("p");
-    pEl5.classList.add("show__info-heading")
-    pEl5.innerText = "LOCATION";
-    articleEl.appendChild(pEl5);
+    const locationLabel = document.createElement("p");
+    locationLabel.classList.add("show__info-heading");
+    locationLabel.innerText = "LOCATION";
+    showContainer.appendChild(locationLabel);
 
-    let pEl6 = document.createElement("p");
-    pEl6.classList.add("show__info")
-    pEl6.innerText = location;
-    articleEl.appendChild(pEl6);
+    const locationText = document.createElement("p");
+    locationText.classList.add("show__info");
+    locationText.innerText = location;
+    showContainer.appendChild(locationText);
 
-    let buttonEl = document.createElement("button");
+    const buttonEl = document.createElement("button");
     buttonEl.setAttribute("type", "button");
     buttonEl.innerText = "BUY TICKETS";
-    articleEl.appendChild(buttonEl);
-
-    mainSection.appendChild(articleEl) //could move to top??
+    showContainer.appendChild(buttonEl);
 }
 
 concertsData.forEach(concert => {
     createShows(concert.date, concert.venue, concert.location);
+});
+
+
+// Below is code that allows only one clicked show row to remain actively highlighted. 
+// It loops through each checked row to Check if it was the one that was clicked
+
+const rows = document.querySelectorAll(".show");
+
+rows.forEach((row) => {
+    row.addEventListener("click", event => {
+
+        rows.forEach((checkedRow) => {
+            if (checkedRow === event.currentTarget) {
+                checkedRow.classList.add("show--active");
+            } else {
+                checkedRow.classList.remove("show--active");
+            }
+        })
+    })
 });

@@ -7,12 +7,9 @@
 
 
 .hero {
-
-    // box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    // align-items: center;
-    justify-content: space-evenly; // could center
+    justify-content: space-evenly;
     position: relative;
 
     background-image: url(../assets/images/hero-shows.jpg);
@@ -40,7 +37,7 @@
         color: $color-primary-white;
         @include font-header-page;
         z-index: 1;
-        margin: 0 0 0 5%; // was just left 5%
+        margin: 0 0 0 5%;
 
         @include tablet {
             width: 70%;
@@ -57,81 +54,97 @@
         @include font-subheader;
         z-index: 1;
         margin-left: 5%;
-        margin: 0 0 0 5%; // was just left 5%
+        margin: 0 0 0 5%;
 
+        @include tablet {
+            position: relative;
+            top: 2.5vh;
+        }
 
         @include desktop {
             margin-left: 10%;
+            top: 8vh;
         }
     }
 
     &__song {
         z-index: 1;
-        margin: 0 0 0 5%; // fix this to both sides
+        margin: 0 0 0 5%;
         width: 90%;
         max-width: 400px;
-
-        height: 110px ;// adjust this
-        // max-height: 150px;
+        height: 110px ;
 
         @include desktop {
             margin-left: 10%;
                 position: relative;
                 left: 50%;
                 bottom: 16rem;
-
+                height: 140px;
         }
     }
 }
 
-// .main {
-//     box-sizing: border-box;
-//     width: 100%;
-//     padding: 1.5rem 5% 1rem;
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem 16px 1rem;
 
-//     @include tablet {
-//         padding: 3rem 5% 1rem;
-//     }
+    @include tablet {
+        padding: 3rem 5% 1rem;
+    }
 
-//     @include desktop {
-//         padding: 3rem 10% 2rem;
-//     }
+    @include desktop {
+        padding: 3rem 10% 2rem;
+        position: relative;
+    }
 
-//     &__title {
-//         @include font-header-section;
-//         margin: 0 0 1rem;
+    &__title {
+        @include font-header-section;
+        margin: 0;
+    }
 
-//         @include tablet {
-//             margin-bottom: 3rem;
-//         }
-//     }
-// }
+    &__container {
+        @include desktop {
+            position: relative;
+        }
+    }
+}
 
 .show {
     box-sizing: border-box;
     width: 100%;
-    padding: 16px; //as per style guide
     border-bottom: 1px solid $color-secondary-mercury;
-    
-    @include font-body;
+    padding: 16px 0 16px;
+    @include font-body; 
 
     @include tablet {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 24px 18px; //as per style guide
-        min-width: none; // don't use padding just try a fixed width in remS!
+        padding: 24px 18px;
+        font-size: 1rem;
+    }
 
+    @include desktop {
+        width: 75%;
+        margin-left: 20%;
+    }
+
+    &:hover {
+        background-color: $color-secondary-alabaster;
+    }
+
+    &--active {
+        background-color: $color-secondary-mercury;
         &:hover {
-            background-color: $color-secondary-alabaster;
-        }
-
-        &:active {
             background-color: $color-secondary-mercury;
         }
     }
 
     &__info {
+        @include tablet {
+            width: 25%;
+        }
 
         &--date {
             font-weight: bold;
@@ -144,25 +157,30 @@
         @include tablet {
             display:none;
         }
-
-        &--large {
-            display: none;
-
-            @include tablet {
-                display: flex;
-                // justify-content: space-between;
-            }
-        }
     }
 }
 
+.show-title-hidden {
+    display: none;
 
+    @include tablet {
+        color: $color-primary-silver;
+        box-sizing: border-box;
+        width: 100%;
+        border-bottom: 1px solid $color-secondary-mercury;
+        @include font-body; 
 
+        display: flex;
+        padding: 24px 18px;
+        font-size: 1rem;
+    }
 
+    @include desktop {
+        width: 75%;
+        margin-left: 20%;
+    }
 
-
-
-
-
-
-
+    &__label {
+        width: 26.5%;
+    }
+}
