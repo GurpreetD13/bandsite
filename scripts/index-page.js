@@ -106,3 +106,20 @@ formData.addEventListener("submit", event => {
         alert('Thank you, your comment has been successfully sumbitted. Check out our Shows page!');
     }
 });
+
+// new for sprint-3
+
+const apiKey = "6051d48e-1d45-4741-89e0-e383b88213df";
+
+axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
+    .then(result => { //or use the word response
+        console.log(result);
+        // const commentsArray = result.data;
+
+        // commentsArray.forEach(comment => {
+        //     displayComment(comment);
+        // })
+    })
+    .catch(error => {
+        console.log(error);
+    })
