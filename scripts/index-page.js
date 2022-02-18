@@ -1,20 +1,20 @@
-commentsData = [
-    {
-        name: "Connor Walton",
-        timestamp: "02/17/2021",
-        comment: "This is art.This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence.Let us appreciate this for what it is and what it contains."
-    },
-    {
-        name: "Emilie Beach",
-        timestamp: "01/09/2021",
-        comment: "I feel blessed to have seen them in person.What a show! They were just perfection.If there was one day of my life I could relive, this would be it.What an incredible day."
-    },
-    {
-        name: "Miles Acosta",
-        timestamp: "12/20/2020",
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-];
+// commentsData = [
+//     {
+//         name: "Connor Walton",
+//         timestamp: "02/17/2021",
+//         comment: "This is art.This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence.Let us appreciate this for what it is and what it contains."
+//     },
+//     {
+//         name: "Emilie Beach",
+//         timestamp: "01/09/2021",
+//         comment: "I feel blessed to have seen them in person.What a show! They were just perfection.If there was one day of my life I could relive, this would be it.What an incredible day."
+//     },
+//     {
+//         name: "Miles Acosta",
+//         timestamp: "12/20/2020",
+//         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+//     }
+// ];
 
 // Function displayComment below will take in Comment object as parameter and render 
 // comment posts from database with: name, timestamp, and text.
@@ -55,9 +55,9 @@ function displayComment(post) {
 };
 
 
-commentsData.forEach(post => {
-    displayComment(post)
-});
+// commentsData.forEach(post => {
+//     displayComment(post)
+// });
 
 
 // Section below takes user comment and re-renders comments all comments including new user comment
@@ -113,12 +113,12 @@ const apiKey = "6051d48e-1d45-4741-89e0-e383b88213df";
 
 axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
     .then(result => { //or use the word response
-        console.log(result);
-        // const commentsArray = result.data;
+        console.log(result.data);
+        const commentsDataArray = result.data;
 
-        // commentsArray.forEach(comment => {
-        //     displayComment(comment);
-        // })
+        commentsDataArray.forEach(comment => {
+            displayComment(comment);
+        })
     })
     .catch(error => {
         console.log(error);
