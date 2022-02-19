@@ -31,6 +31,9 @@ concertsData = [
     }
 ];
 
+// Function createShows below will take in shows data from GET request to showsAPI and render 
+// shows info from server database with: timestamp, venue, and location.
+
 const mainSection = document.querySelector(".main__container");
 
 function createShows(date, venue, location) {

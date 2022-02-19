@@ -10,7 +10,7 @@
 @font-face {
   font-family: "AvenirNext";
   src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: bold;
+  font-weight: 700;
 }
 html {
   font-size: 16px;
@@ -30,7 +30,7 @@ button {
   font-style: "AvenirNext", sans-serif;
   font-size: 0.625rem;
   line-height: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 0.875rem;
   background-color: #323232;
   color: #FFFFFF;
@@ -71,7 +71,7 @@ button:hover {
   color: #FFFFFF;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   font-weight: normal;
   margin-top: 1rem;
 }
@@ -139,7 +139,7 @@ button:hover {
   }
 }
 .nav__link--active {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .footer {
@@ -166,7 +166,7 @@ button:hover {
 .footer__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0 0 1rem;
   padding-right: 3.3%;
 }
@@ -193,7 +193,7 @@ button:hover {
   color: #FFFFFF;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   font-weight: normal;
   padding-top: 2rem;
   max-height: 20px;
@@ -302,7 +302,7 @@ button:hover {
   color: #FFFFFF;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   z-index: 1;
   margin: 0 0 0 5%;
 }
@@ -386,7 +386,7 @@ button:hover {
 .main__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0;
 }
 @media screen and (min-width: 768px) {
@@ -446,7 +446,7 @@ button:hover {
   }
 }
 .show__info--date {
-  font-weight: bold;
+  font-weight: 700;
 }
 .show__info-heading {
   color: #AFAFAF;
