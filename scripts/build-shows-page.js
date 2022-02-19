@@ -104,8 +104,8 @@ const apiKey = "6051d48e-1d45-4741-89e0-e383b88213df";
 
 axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
     .then(result => { //or use the word response
-        console.log(result.data);
-        const showsDataArray = result.data;
+        console.log(result.data); 
+        const showsDataArray = result.data; // the result.data if our get is fullfilled is array of show objects
 
         showsDataArray.forEach(show => {
             createShows(show.date, show.place, show.location)

@@ -76,45 +76,66 @@ formData.addEventListener("submit", event => {
         return;
 
     } else {
-        let today = new Date();
-        let dd = today.getDate();
-        let mm = today.getMonth() + 1;
-        let yyyy = today.getFullYear();
+        // let today = new Date();
+        // let dd = today.getDate();
+        // let mm = today.getMonth() + 1;
+        // let yyyy = today.getFullYear();
 
-        if (dd < 10) { dd = '0' + dd; };
-        if (mm < 10) { mm = '0' + mm; };
+        // if (dd < 10) { dd = '0' + dd; };
+        // if (mm < 10) { mm = '0' + mm; };
 
-        today = mm + '/' + dd + '/' + yyyy;
+        // today = mm + '/' + dd + '/' + yyyy;
 
 
-        const newUserComment = {
+        let newUserComment = {
             name: event.target.userName.value,
-            timestamp: today,
+            // timestamp: today,
             comment: event.target.userComment.value
         };
 
-        commentsData.unshift(newUserComment);
+        axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`,
+            // name: ,
+            // comment: 
+            newUserComment)
+            .then(result => { //or use the word response
+                console.log(result);
+                console.log(result.data);
 
-        commentPostsSection.innerHTML = "";
+                // the result if our POST request is successful is an object of the user's Comment now with a timestamp
 
-        commentsData.forEach(post => {
-            displayComment(post);
-        });
+                newUserComment = result.data;
+                commentsDataArray.unshift(newUserComment); // was below catch error
 
-        formData.reset();
+                commentPostsSection.innerHTML = "";
 
-        alert('Thank you, your comment has been successfully sumbitted. Check out our Shows page!');
+                commentsDataArray.forEach(post => {
+                    displayComment(post);
+                });
+
+                formData.reset();
+
+                alert('Thank you, your comment has been successfully sumbitted. Check out our Shows page!');
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+
+
     }
 });
 
-// new for sprint-3
+// new for sprint-3  run the original get then embed the post in the form, and just move get to top
 
 const apiKey = "6051d48e-1d45-4741-89e0-e383b88213df";
+
+let commentsDataArray = [];
 
 axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
     .then(result => { //or use the word response
         console.log(result.data);
-        const commentsDataArray = result.data;
+        commentsDataArray = result.data;
 
         commentsDataArray.forEach(comment => {
             displayComment(comment);
@@ -123,3 +144,4 @@ axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
     .catch(error => {
         console.log(error);
     })
+
