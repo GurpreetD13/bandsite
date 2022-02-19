@@ -94,10 +94,7 @@ formData.addEventListener("submit", event => {
             comment: event.target.userComment.value
         };
 
-        axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`,
-            {
-                newUserComment
-            })
+        axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`, newUserComment)
             .then(result => { //or use the word response
                 console.log(result);
                 console.log(result.data);
@@ -132,10 +129,16 @@ let commentsDataArray = [];
 function displayLatestComments() {
     axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
         .then(result => { //or use the word response
-            console.log(result.data);
+            // console.log(result.data);
             commentsDataArray = result.data;
 
-            // Here we sort the data array chronologically (descending order) by timestamp
+            // Here we sort the comment objects reverse-chronologically (descending order from newest to oldest) by timestamp
+
+            commentsDataArray.sort((a, b) => {
+                return Number(b.timestamp) - Number(a.timestamp);
+            });
+
+            console.log(result.data);
 
             commentsDataArray.forEach(comment => {
                 displayComment(comment);
