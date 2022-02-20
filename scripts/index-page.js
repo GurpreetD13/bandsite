@@ -89,7 +89,10 @@ formData.addEventListener("submit", event => {
 
                 // the result of our POST request is successful is an object of the user's Comment now with a timestamp
 
-                commentPostsSection.innerHTML = "";
+                // commentPostsSection.innerHTML = "";
+                while (commentPostsSection.firstChild) {
+                    commentPostsSection.removeChild(commentPostsSection.firstChild);
+                };
 
                 displayLatestComments();
 
