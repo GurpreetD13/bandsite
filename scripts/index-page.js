@@ -88,7 +88,7 @@ formData.addEventListener("submit", event => {
                 console.log(result.data);
 
                 // the result of our POST request is successful is an object of the user's Comment now with a timestamp
-
+                // First clear all comments on page then display latest comments
                 // commentPostsSection.innerHTML = "";
                 while (commentPostsSection.firstChild) {
                     commentPostsSection.removeChild(commentPostsSection.firstChild);

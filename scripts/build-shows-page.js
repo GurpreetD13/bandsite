@@ -85,23 +85,26 @@ function displayShows(date, venue, location) {
 // });
 
 
-// Below is code that allows only one clicked show row to remain actively highlighted. 
-// It loops through each checked row to Check if it was the one that was clicked
+// Below is code that allows only one clicked show row to be actively highlighted. 
+// It loops through each row to Check if it was the one that was clicked otherwise removes highlighting.
+// We will invoke it when after our successfull GET request for shows data, and shows are displayed.
 
-const rows = document.querySelectorAll(".show");
+function addRowHighlighting() {
+    const rows = document.querySelectorAll(".show");
 
-rows.forEach((row) => {
-    row.addEventListener("click", event => {
+    rows.forEach((row) => {
+        row.addEventListener("click", event => {
 
-        rows.forEach((checkedRow) => {
-            if (checkedRow === event.currentTarget) {
-                checkedRow.classList.toggle("show--active");
-            } else {
-                checkedRow.classList.remove("show--active");
-            }
+            rows.forEach((checkedRow) => {
+                if (checkedRow === event.currentTarget) {
+                    checkedRow.classList.toggle("show--active");
+                } else {
+                    checkedRow.classList.remove("show--active");
+                }
+            })
         })
-    })
-});
+    });
+};
 
 // new for sprint-3 
 
@@ -109,24 +112,25 @@ const apiKey = "6051d48e-1d45-4741-89e0-e383b88213df";
 
 axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
     .then(result => { //or use the word response
-        console.log(result.data); 
+        console.log(result.data);
         const showsDataArray = result.data; // the result.data if our get is fullfilled is array of show objects
 
         showsDataArray.forEach(show => {
             displayShows(show.date, show.place, show.location)
 
-            
-        })
+
+        });
+        addRowHighlighting();
     })
     .catch(error => {
         console.log(error);
     })
 
-    // Function below formats date from string timestamp to "Day MON dd yyyy" format (it is used when rendering shows)
+// Function below formats date from string timestamp to "Day MON dd yyyy" format (it is used when rendering shows)
 
-    function showDateFormatter(timestamp) {
+function showDateFormatter(timestamp) {
 
-        timestamp = Number(timestamp);
-        let date = new Date(timestamp);
-        return date = date.toDateString();
-    }
+    timestamp = Number(timestamp);
+    let date = new Date(timestamp);
+    return date = date.toDateString();
+}
