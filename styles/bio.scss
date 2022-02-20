@@ -160,7 +160,6 @@
     }
 }
 
-
 .form-container {
     display: flex;
     justify-content: center;
@@ -195,10 +194,9 @@
         @include tablet {
             margin-left: 65%;
         }
-
+        
         @include desktop {
             margin-left: 69%;
-
         }
     }
 }
