@@ -144,7 +144,7 @@ displayLatestComments();
 console.log(new Date());
 
 
-// Below is a function to format date from numerical timestamp to dd//mm/yyyy format
+// Function below formats date from numerical timestamp to dd//mm/yyyy format (It is used when rendering comments)
 
 function commentDateFormatter(timestamp) {
 

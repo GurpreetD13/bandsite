@@ -31,12 +31,14 @@ concertsData = [
     }
 ];
 
-// Function createShows below will take in shows data from GET request to showsAPI and render 
-// shows info from server database with: timestamp, venue, and location.
+// Function displayShows below will take in shows data (from later GET request from shows API)
+// and render shows info with: timestamp, venue, and location.
+// (the timestamp also gets converted using the showDateFormatter function)
+
 
 const mainSection = document.querySelector(".main__container");
 
-function createShows(date, venue, location) {
+function displayShows(date, venue, location) {
 
     const showContainer = document.createElement("article");
     showContainer.classList.add("show");
@@ -49,7 +51,7 @@ function createShows(date, venue, location) {
 
     const dateText = document.createElement("p");
     dateText.classList.add("show__info", "show__info--date");
-    dateText.innerText = date;
+    dateText.innerText = showDateFormatter(date);
     showContainer.appendChild(dateText);
 
     const venueLabel = document.createElement("p");
@@ -111,7 +113,7 @@ axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
         const showsDataArray = result.data; // the result.data if our get is fullfilled is array of show objects
 
         showsDataArray.forEach(show => {
-            createShows(show.date, show.place, show.location)
+            displayShows(show.date, show.place, show.location)
 
             
         })
@@ -119,3 +121,12 @@ axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
     .catch(error => {
         console.log(error);
     })
+
+    // Function below formats date from string timestamp to "Day MON dd yyyy" format (it is used when rendering shows)
+
+    function showDateFormatter(timestamp) {
+
+        timestamp = Number(timestamp);
+        let date = new Date(timestamp);
+        return date = date.toDateString();
+    }
