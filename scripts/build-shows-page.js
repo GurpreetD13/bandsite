@@ -81,7 +81,7 @@ function displayShows(date, venue, location) {
 }
 
 // concertsData.forEach(concert => {
-//     createShows(concert.date, concert.venue, concert.location);
+//     displayShows(concert.date, concert.venue, concert.location);
 // });
 
 
@@ -95,7 +95,7 @@ rows.forEach((row) => {
 
         rows.forEach((checkedRow) => {
             if (checkedRow === event.currentTarget) {
-                checkedRow.classList.add("show--active");
+                checkedRow.classList.toggle("show--active");
             } else {
                 checkedRow.classList.remove("show--active");
             }

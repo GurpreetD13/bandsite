@@ -71,11 +71,9 @@ formData.addEventListener("submit", event => {
 
     if (event.target.userName.value.length < 2) {
         alert("Please enter a minimum of 2 characters for the NAME field and re-submit. Thank you!");
-        return;
 
     } else if (event.target.userComment.value.length < 10) {
         alert("Please enter a minimum of 10 characters for the COMMENT field and re-submit. Thank you!");
-        return;
 
     } else {
 
@@ -108,7 +106,7 @@ formData.addEventListener("submit", event => {
 
 // new for sprint-3  run the original get then embed the post in the form, and just move get to top
 
-// function displayLatestComments below will make GET request to get latest comments data from API and display them.
+// Function displayLatestComments below will make GET request to get latest comments data from API and display them.
 // We invoke it once so that the latest comments are displayed upon page initial page load.
 // We will need it again to display the latest comments after our POST request/form submission.
 
@@ -140,8 +138,6 @@ function displayLatestComments() {
 }
 
 displayLatestComments();
-
-console.log(new Date());
 
 
 // Function below formats date from numerical timestamp to dd//mm/yyyy format (It is used when rendering comments)
