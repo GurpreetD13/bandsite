@@ -18,6 +18,7 @@
 
 // Function displayComment below will take in Comment object as parameter and render 
 // comment posts from database with: name, timestamp, and text.
+// (the timestamp also gets converted using the commentDateFormatter function)
 
 const commentPostsSection = document.querySelector(".comment-posts");
 
@@ -46,7 +47,7 @@ function displayComment(post) {
 
     const commentDate = document.createElement("p");
     commentDate.classList.add("comment-post__date");
-    commentDate.innerText = post.timestamp;
+    commentDate.innerText = commentDateFormatter(post.timestamp);
     commentHeading.appendChild(commentDate);
 
     const commentText = document.createElement("p");
@@ -77,20 +78,9 @@ formData.addEventListener("submit", event => {
         return;
 
     } else {
-        // let today = new Date();
-        // let dd = today.getDate();
-        // let mm = today.getMonth() + 1;
-        // let yyyy = today.getFullYear();
-
-        // if (dd < 10) { dd = '0' + dd; };
-        // if (mm < 10) { mm = '0' + mm; };
-
-        // today = mm + '/' + dd + '/' + yyyy;
-
 
         let newUserComment = {
             name: event.target.userName.value,
-            // timestamp: today,
             comment: event.target.userComment.value
         };
 
@@ -135,7 +125,7 @@ function displayLatestComments() {
             // Here we sort the comment objects reverse-chronologically (descending order from newest to oldest) by timestamp
 
             commentsDataArray.sort((a, b) => {
-                return Number(b.timestamp) - Number(a.timestamp);
+                return b.timestamp - a.timestamp;
             });
 
             console.log(result.data);
@@ -151,3 +141,20 @@ function displayLatestComments() {
 
 displayLatestComments();
 
+console.log(new Date());
+
+
+// Below is a function to format date from numerical timestamp to dd//mm/yyyy format
+
+function commentDateFormatter(timestamp) {
+
+    let date = new Date(timestamp);
+    let dd = date.getDate();
+    let mm = date.getMonth() + 1;
+    let yyyy = date.getFullYear();
+
+    if (dd < 10) { dd = '0' + dd; };
+    if (mm < 10) { mm = '0' + mm; };
+
+    return date = mm + '/' + dd + '/' + yyyy;
+};
