@@ -398,14 +398,14 @@ button:hover {
   }
 }
 .main__body {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .main__body {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -458,8 +458,8 @@ button:hover {
 }
 
 .comments-section {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
   box-sizing: border-box;
   width: 100%;
@@ -467,8 +467,8 @@ button:hover {
 }
 @media screen and (min-width: 768px) {
   .comments-section {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -536,8 +536,8 @@ label {
 }
 
 .comment-form__user-name, .comment-form__user-comment {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
   font-family: "AvenirNext", sans-serif;
   color: #323232;
@@ -551,8 +551,8 @@ label {
 }
 @media screen and (min-width: 768px) {
   .comment-form__user-name, .comment-form__user-comment {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -579,8 +579,8 @@ textarea {
 }
 
 .comment-post {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
   display: flex;
   justify-content: center;
@@ -591,8 +591,8 @@ textarea {
 }
 @media screen and (min-width: 768px) {
   .comment-post {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media screen and (min-width: 1280px) {

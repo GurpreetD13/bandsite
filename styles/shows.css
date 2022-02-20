@@ -406,14 +406,14 @@ button:hover {
   width: 100%;
   border-bottom: 1px solid #E1E1E1;
   padding: 16px 0 16px;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .show {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -466,18 +466,17 @@ button:hover {
     box-sizing: border-box;
     width: 100%;
     border-bottom: 1px solid #E1E1E1;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
     display: flex;
     padding: 24px 18px;
-    font-size: 1rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 768px) {
   .show-title-hidden {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media screen and (min-width: 1280px) {
