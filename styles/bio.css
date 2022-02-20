@@ -535,7 +535,7 @@ label {
   color: #AFAFAF;
 }
 
-input, textarea {
+.comment-form__user-name, .comment-form__user-comment {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
@@ -550,21 +550,21 @@ input, textarea {
   padding: 12px;
 }
 @media screen and (min-width: 768px) {
-  input, textarea {
+  .comment-form__user-name, .comment-form__user-comment {
     font-size: 1.5rem;
     line-height: 2rem;
   }
 }
 @media screen and (min-width: 768px) {
-  input, textarea {
+  .comment-form__user-name, .comment-form__user-comment {
     min-height: 48px;
     padding: 16px;
   }
 }
-input:active, textarea:active {
+.comment-form__user-name:active, .comment-form__user-comment:active {
   border-color: #323232;
 }
-input--error, textarea--error {
+.comment-form__user-name--error, .comment-form__user-comment--error {
   border-color: #D22D2D;
 }
 

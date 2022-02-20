@@ -207,7 +207,7 @@ label {
     color: $color-primary-silver;
 }
 
-input, textarea {
+.comment-form__user-name, .comment-form__user-comment {
     @include font-body;
     font-family: $font-stack;
     color: $color-primary-black;

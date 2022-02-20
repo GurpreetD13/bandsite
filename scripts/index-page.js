@@ -62,20 +62,24 @@ function displayComment(post) {
 
 
 // Section below takes user comment, validates, makes POST request, makes new GET request for most up to date commments from other users, and finally re-renders latest comments
-// was     below takes user comment, and re-renders comments all comments including new user comment
 
 const formData = document.getElementById("comment-form");
 
 formData.addEventListener("submit", event => {
     event.preventDefault();
 
-    if (event.target.userName.value.length < 2) {
-        alert("Please enter a minimum of 2 characters for the NAME field and re-submit. Thank you!");
+    // validation
+    const userNameField = document.querySelector(".comment-form__user-name");
+    const userTextField = document.querySelector(".comment-form__user-comment");
 
-    } else if (event.target.userComment.value.length < 10) {
-        alert("Please enter a minimum of 10 characters for the COMMENT field and re-submit. Thank you!");
-
+    if (event.target.userName.value.length < 1 || event.target.userComment.value.length < 1) {
+        event.target.userName.value.length < 1 ? userNameField.classList.add("comment-form__user-name--error") : userNameField.classList.remove("comment-form__user-name--error");
+        event.target.userComment.value.length < 1 ? userTextField.classList.add("comment-form__user-comment--error") : userTextField.classList.remove("comment-form__user-comment--error");
     } else {
+        userNameField.classList.remove("comment-form__user-name--error");
+        userTextField.classList.remove("comment-form__user-comment--error");
+
+        // otherwise if valid continue as follows:
 
         let newUserComment = {
             name: event.target.userName.value,
@@ -83,7 +87,7 @@ formData.addEventListener("submit", event => {
         };
 
         axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`, newUserComment)
-            .then(result => { //or use the word response
+            .then(result => {
                 console.log(result);
                 console.log(result.data);
 
@@ -97,8 +101,6 @@ formData.addEventListener("submit", event => {
                 displayLatestComments();
 
                 formData.reset();
-
-                alert('Thank you, your comment has been successfully sumbitted. Check out our Shows page!');
 
             })
             .catch(error => {
